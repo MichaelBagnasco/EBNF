@@ -26,6 +26,7 @@
 		A6B22DAD2048C8A0007F2E75 /* EBNF */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = EBNF; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6B22DB02048C8A0007F2E75 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		A6B22DB72048EE65007F2E75 /* input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
+		A6B22DB82048F2F6007F2E75 /* output.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = output.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +59,7 @@
 		A6B22DAF2048C8A0007F2E75 /* EBNF */ = {
 			isa = PBXGroup;
 			children = (
+				A6B22DB82048F2F6007F2E75 /* output.txt */,
 				A6B22DB02048C8A0007F2E75 /* main.cpp */,
 				A6B22DB72048EE65007F2E75 /* input.txt */,
 			);

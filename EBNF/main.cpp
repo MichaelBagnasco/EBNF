@@ -19,36 +19,73 @@ int main() {
     ifstream fin;
     fin.open("input.txt");
     
+    string number,
+    newNumber;
+    
     ofstream fout;
     fout.open("output.txt");
     
-    for (; ; <#increment#>) {
-        <#statements#>
+    while(getline(fin, number))
+    {
+        if (number.length() > 16)
+        {
+            cout << "Invalid Number" << endl;
+            fout << "Invalid Number" << endl;
+            continue;
+        }
+        
+        newNumber = convert(number);
+        cout << newNumber << endl;
+        fout << newNumber << endl;
     }
     
+    //cin >> number;
     return 0;
 }
 
 string convert(string number)
 {
-    string newNumber = "(000) 000-000";
+    int newIndex = 1;
+    int index = 0;
+    u_long length = number.length();
     
-    if (number[0] == '+')
-        for (int i = 0; i < number.length(); i++)
-            number[i] = number[i+1];
-    if (number[0] == '1')
-        for (int i = 0; i < number.length(); i++)
-            number[i] = number[i+1];
+    string newNumber = "(000) 000-0000";
     
-    for (int i = 0; i < number.length(); i++) {
-        int j = 1;
-        if (recognize(number[i])) {
-            newNumber[j] = number[i];
-            j++;
-            if (j == 4)
-                j = 6;
-            else if (j == 9)
-                j = 10;
+    if (length <= 8)
+    {
+        newIndex = 0;
+        newNumber = "000-0000";
+    }
+    
+    if (number[index] == '+')
+        index++;
+    if (number[index] == '1')
+        index++;
+    
+    
+    for (; index < length; index++)
+    {
+        if (length < 9)
+        {
+            if (recognize(number[index]))
+            {
+                newNumber[newIndex] = number[index];
+                newIndex++;
+                if (newIndex == 3)
+                    newIndex = 4;
+            }
+        }
+        else
+        {
+            if (recognize(number[index]))
+            {
+            newNumber[newIndex] = number[index];
+            newIndex++;
+            if (newIndex == 4)
+                newIndex = 6;
+            else if (newIndex == 9)
+                newIndex = 10;
+            }
         }
     }
     
